@@ -1,0 +1,18 @@
+---
+description: sedai detected expiring certificate
+enabled: true
+trigger:
+  type: core.st2.webhook
+  ref: core.7cc72575-5010-4772-91c5-9defabf73841
+  description: Trigger type for registering webhooks that can consume arbitrary payload.
+  parameters:
+    url: EXPIRED_CERTIFICATE
+action:
+  ref: core.local
+  description: Action that executes an arbitrary Linux command on the localhost.
+  parameters:
+    cmd: ls
+    timeout: 120
+pack: sedai_st2
+name: EXPIRED_CERTIFICATE
+

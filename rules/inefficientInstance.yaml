@@ -1,0 +1,18 @@
+---
+description: sedi detected inefficient instance
+enabled: true
+trigger:
+  type: core.st2.webhook
+  ref: core.6643de1a-f5ae-452e-8e9f-d5babcc82515
+  description: Trigger type for registering webhooks that can consume arbitrary payload.
+  parameters:
+    url: INEFFICIENT_INSTANCE
+action:
+  ref: core.local
+  description: Action that executes an arbitrary Linux command on the localhost.
+  parameters:
+    cmd: ls
+    timeout: 120
+pack: sedai_st2
+name: INEFFICIENT_INSTANCE
+

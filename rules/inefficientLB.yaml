@@ -1,0 +1,18 @@
+---
+description: sedai detected inefficient load balancers
+enabled: true
+trigger:
+  type: core.st2.webhook
+  ref: core.536e7ffc-98ad-4d15-94e1-81e6ab283ad4
+  description: Trigger type for registering webhooks that can consume arbitrary payload.
+  parameters:
+    url: INEFFICIENT_LB
+action:
+  ref: core.local
+  description: Action that executes an arbitrary Linux command on the localhost.
+  parameters:
+    cmd: ls
+    timeout: 120
+pack: sedai_st2
+name: INEFFICIENT_LB
+

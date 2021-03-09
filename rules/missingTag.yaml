@@ -1,0 +1,18 @@
+---
+description: sedai detected missing tags in app.
+enabled: true
+trigger:
+  type: core.st2.webhook
+  ref: core.6e6da42d-7c54-4fc0-b0a8-656a0ad29fbe
+  description: Trigger type for registering webhooks that can consume arbitrary payload.
+  parameters:
+    url: MISSING_TAG
+action:
+  ref: core.local
+  description: Action that executes an arbitrary Linux command on the localhost.
+  parameters:
+    cmd: ls
+    timeout: 120
+pack: sedai_st2
+name: MISSING_TAG
+

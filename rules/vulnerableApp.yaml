@@ -1,0 +1,18 @@
+---
+description: sedai detected vulnerabilities in app
+enabled: true
+trigger:
+  type: core.st2.webhook
+  ref: core.e39fd741-ddc2-49a7-91b8-7fc8657b4a62
+  description: Trigger type for registering webhooks that can consume arbitrary payload.
+  parameters:
+    url: VULNERABLE_APP
+action:
+  ref: core.local
+  description: Action that executes an arbitrary Linux command on the localhost.
+  parameters:
+    cmd: ls
+    timeout: 120
+pack: sedai_st2
+name: VULNERABLE_APP
+
